@@ -28,7 +28,7 @@ aside{
     position: absolute;
     margin-left: 75%;
     margin-top: 5%;
-    height:225%;
+    height:267%;
     float: right;
 }
 
@@ -39,7 +39,9 @@ li{
 }
 
 a{
+    cursor: pointer;
     text-decoration: none;
+    color: brown;
 }
 .referencia {
     display: inline;
@@ -65,9 +67,20 @@ header{
 img{
     width: 350px;
     height: 250px;
-    border-radius: 100%;
+    border-radius: 50px 50px 50px 0;
     border: 3px solid aliceblue;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 h1{
-    text-shadow: 10px 10px black;
+    font-size: 2em;
+    text-shadow: 5px 5px black;
+}
+div{
+    border: 1px solid wheat;
+    margin: 40px;
+    border-radius: 50px;
+}
+li a{
+    color: aliceblue;
 }
