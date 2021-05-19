@@ -130,7 +130,7 @@ function seraQueAlgumÉPar(a,b,c){
   } else {
     console.log("false")
   }
-
+}
 
 function seraQueAlgumÉImpar(a,b,c){
   if(a%2 !== 0||b%2 !== 0||c%2 !== 0){
@@ -152,7 +152,7 @@ function lucroAoVenderMil(a,b){
 function salarioLiquido(salárioBruto){
   let salárioDeduzidoDoInss = 0
   let salárioTotal = 0
-  // Salário bruto até R$ 1.556,94: alíquota de 8%
+// Salário bruto até R$ 1.556,94: alíquota de 8%
 // Salário bruto de R$ 1.556,95 a R$ 2.594,92: alíquota de 9%
 // Salário bruto de R$ 2.594,93 a R$ 5.189,82: alíquota de 11%
 // Salário bruto acima de R$ 5.189,82: alíquota máxima de R$ 570,88
@@ -168,17 +168,15 @@ function salarioLiquido(salárioBruto){
     salárioDeduzidoDoInss = salárioBruto * 0.89
   }
   if (salárioDeduzidoDoInss <= 1903.98){
-    salárioTotal = salárioDeduzidoDoInss salárioTotal
-  } else if (salárioDeduzidoDoInss > 1903.98 && salárioDeduzidoDoInss <= 2.826.65){
-    salárioTotal = salárioDeduzidoDoInss - (salárioDeduzidoDoInss*0.925 - 142.80)
-  } else if (salárioDeduzidoDoInss > 2.826.65 && salárioDeduzidoDoInss <= 3.751,05 ) {
-    salárioTotal = salárioDeduzidoDoInss - (salárioDeduzidoDoInss*0.85 - 354.80)
-  } else if (salárioDeduzidoDoInss > 3.751,05 && salárioDeduzidoDoInss <= 4.664.68 ) {
-    salárioTotal = salárioDeduzidoDoInss - (salárioDeduzidoDoInss*0.775 - 636.13)
+    salárioTotal = salárioDeduzidoDoInss
+  } else if (salárioDeduzidoDoInss > 1903.98 && salárioDeduzidoDoInss <= 2826.65){
+    salárioTotal = salárioDeduzidoDoInss - (salárioDeduzidoDoInss*(1-0.925) - 142.80)
+  } else if (salárioDeduzidoDoInss > 2826.65 && salárioDeduzidoDoInss <= 3751.05 ) {
+    salárioTotal = salárioDeduzidoDoInss - (salárioDeduzidoDoInss*(1-0.85) - 354.80)
+  } else if (salárioDeduzidoDoInss > 3751.05 && salárioDeduzidoDoInss <= 4664.68 ) {
+    salárioTotal = salárioDeduzidoDoInss - (salárioDeduzidoDoInss*(1-0.775) - 636.13)
   } else {
-    salárioTotal = salárioDeduzidoDoInss - (salárioDeduzidoDoInss*0.725 - 869.36)
+    salárioTotal = salárioDeduzidoDoInss - (salárioDeduzidoDoInss*(1-0.725) - 869.36)
   }
   console.log("Resultado: " + salárioTotal)
-
-
 }
