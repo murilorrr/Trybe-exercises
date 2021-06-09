@@ -24,12 +24,10 @@
         <option value="">JavaScript</option>
       </select>
       <br>
-      <div class="TipoDeLugar">
-        <label for="Casa">Casa</label>
-        <input type="radio" id="Casa" name="TipoDeLugar" value="Casa" checked>
-        <label for="Apartamento">Apartamento</label>
-        <input type="radio" id="Apartamento" name="TipoDeLugar" value="Apartamento">
-      </div>
+      <label for="Casa">Casa</label>
+      <input type="radio" id="Casa" name="TipoDeLugar" value="Casa" checked>
+      <label for="Apartamento">Apartamento</label>
+      <input type="radio" id="Apartamento" name="TipoDeLugar" value="Apartamento">
     </fieldset>
     <fieldset>
       <legend>Seu Emprego</legend>
@@ -39,9 +37,11 @@
       <br>
       <input type="text" name="descrição-cargo" maxlength="500" required id="descrição">
       <br>
-      <input type="date" name="" id="">
+      <input type="date" name="" id="data" value="" placeholder="">
+      <button type="submit" id="myAnchor"></button>
     </fieldset>
   </form>
 
+  <script src="./script.js"></script>
 </body>
 </html>
