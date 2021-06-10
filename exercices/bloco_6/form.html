@@ -9,39 +9,45 @@
   <script src="./bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="./bootstrap-5.0.1-dist/css/bootstrap.min.css">
   <script src="./path/to/just-validate.min.js"></script>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <form action="" method="GET">
-    <fieldset>
+    <fieldset class="container">
       <legend>Formulário</legend>
-      <input type="text" placeholder="Seu Nome" maxlength="40" required name="nome" id="nome">
+      <input class="form-control" type="text" placeholder="Seu Nome" maxlength="40" required name="nome" id="nome">
       <br>
-      <input type="text" required maxlength="50" placeholder="Seu Email" name="email" id="email">
+      <input class="form-control" type="text" required maxlength="50" placeholder="Seu Email" name="email" id="email">
       <br>
-      <input placeholder="Seu CPF" type="text" name="CPF" id="CPF" required maxlength="11">
+      <input class="form-control" placeholder="Seu CPF" type="text" name="CPF" id="CPF" required maxlength="11">
       <br>
-      <input placeholder="Seu Endereço" type="text" name="Endereço" id="Endereço" name="adress" required maxlength="200">
+      <input class="form-control" placeholder="Seu Endereço" type="text" name="Endereço" id="Endereço" name="adress" required maxlength="200">
       <br>
-      <input placeholder="Sua cidade" type="text" name="cidade" id="city" required maxlength="28">
+      <input class="form-control" placeholder="Sua cidade" type="text" name="cidade" id="city" required maxlength="28">
       <br>
-      <select name="Estado" id="Estado" required>
+      <select class="form-select" name="Estado" id="Estado" required>
       </select>
       <br>
-      <label for="Casa">Casa</label>
-      <input type="radio" id="Casa" name="TipoDeLugar" value="Casa" checked>
-      <label for="Apartamento">Apartamento</label>
-      <input type="radio" id="Apartamento" name="TipoDeLugar" value="Apartamento">
+      <div class="form-check">
+        <label class="form-label" for="Casa">Casa</label>
+        <input class="form-check-input" type="radio" id="Casa" name="TipoDeLugar" value="Casa" checked>
+      </div>
+      <div class="form-check">
+        <label class="form-label" for="Apartamento">Apartamento</label>
+        <input class="form-check-input" type="radio" id="Apartamento" name="TipoDeLugar" value="Apartamento">
+      </div>
     </fieldset>
-    <fieldset>
+    <fieldset class="container">
       <legend>Seu Emprego</legend>
-      <textarea name="currículo" id="currículo" cols="30" rows="10" maxlength="1000" required></textarea>
+      <textarea class="form-control" placeholder="Escreva um pouco sobre o que você faz no seu emprego." name="currículo" id="currículo" cols="30" rows="10" maxlength="1000" required></textarea>
       <br>
-      <input type="text" name="Cargo" id="Cargo" required maxlength="40">
+      <input placeholder="Seu cargo" class="form-control" type="text" name="Cargo" id="Cargo" required maxlength="40">
       <br>
-      <input type="text" name="descrição-cargo" maxlength="500" required id="descrição">
+      <input placeholder="Descreva seu cargo" class="form-control" type="text" name="descrição-cargo" maxlength="500" required id="descrição">
       <br>
-      <input type="date" name="" id="data" value="" placeholder="">
-      <button type="submit" onclick="CliqueDeBotão(Event)" id="myAnchor">Enviar</button>
+      <input class="form-control" type="date" name="" id="data" value="" placeholder="">
+      <button type="reset" class="btn btn-warning">Resetar a página</button>
+      <button class="btn btn-success" type="submit" onclick="CliqueDeBotão(Event)" id="myAnchor">Enviar</button>
     </fieldset>
   </form>
 
