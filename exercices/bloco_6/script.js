@@ -29,7 +29,7 @@ function verificaEmail() {
     preventDefault()
   }
 }
- // zezé me ajudou com este codigo (instrutor da trybe)
+
 document.getElementById("myAnchor").addEventListener("click", function CliqueDeBotão(Event) {
   verificaEmail()
 });
