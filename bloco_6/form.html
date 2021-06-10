@@ -7,12 +7,12 @@
   <title>Document</title>
 </head>
 <body>
-  <form action="" method="post">
+  <form action="" method="GET">
     <fieldset>
       <legend>Formulário</legend>
       <input type="text" placeholder="Seu Nome" maxlength="40" required name="nome" id="nome">
       <br>
-      <input type="email" required maxlength="50" placeholder="Seu Email" name="email" id="email">
+      <input type="text" required maxlength="50" placeholder="Seu Email" name="email" id="email">
       <br>
       <input placeholder="Seu CPF" type="text" name="CPF" id="CPF" required maxlength="11">
       <br>
@@ -21,7 +21,6 @@
       <input placeholder="Sua cidade" type="text" name="cidade" id="city" required maxlength="28">
       <br>
       <select name="Estado" id="Estado" required>
-        <option value="">JavaScript</option>
       </select>
       <br>
       <label for="Casa">Casa</label>
@@ -38,7 +37,7 @@
       <input type="text" name="descrição-cargo" maxlength="500" required id="descrição">
       <br>
       <input type="date" name="" id="data" value="" placeholder="">
-      <button type="submit" id="myAnchor"></button>
+      <button type="submit" onclick="CliqueDeBotão(Event)" id="myAnchor">Enviar</button>
     </fieldset>
   </form>
 
