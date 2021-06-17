@@ -1,0 +1,81 @@
+body {
+
+}
+h1 {
+
+}
+h2 {
+
+}
+
+img {
+	max-width: 100%;
+}
+
+figure {
+	margin: 0;
+}
+
+@media screen and (max-width: 484px){
+	body {
+		background-color: aqua;
+		font-size: larger;
+		margin: 5%;
+		max-width: 450px;
+		font-size:large;
+		margin: 30px;
+	}
+
+	h1 {
+		font-size: x-large;
+	}
+
+	img {
+		margin: 30px 0;
+	}
+}
+
+@media screen and (min-width: 484px) and (max-width: 800px){
+	body {
+		background-color: beige;
+		display: flex;
+		flex-direction: column;
+	}
+	div {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	
+	div img {
+		width:100vh;
+		padding: 20px;
+		margin: px;
+		box-sizing: border-box;
+	}
+	div img figcaption {
+		margin-left: 200px;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	body {
+		background-color: red;
+		display: flex;
+		flex-direction: column;
+	}
+	div {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	
+	div img {
+		margin: 5px;
+	}
+	
+	/* Altere a cor de fundo;
+Ajuste o tamanho da fonte;
+Ajuste as margens da página;
+Adicione a propriedade max-width à página, para garantir que a largura das linhas não fique muito grande. */
+}
