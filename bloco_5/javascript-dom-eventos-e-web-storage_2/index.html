@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <script>
+        let corpo = document.querySelector('.body');
+        let ImaginaOh1DoCorpo = document.createElement('h1');
+        let textoDoCorpo = "Exercício 5.2 - JavaScript DOM";
+        corpo.appendChild(ImaginaOh1DoCorpo);
+        ImaginaOh1DoCorpo.textContent = textoDoCorpo;
+
+        //-------------------------------------------------------------------------------------------
+        //Adicione a tag div com a classe main-content como filho da tag body
+        let divDoBody = document.createElement('div')
+        corpo.appendChild(divDoBody)
+        divDoBody.className = "main-content"
+
+        //-------------------------------------------------------------------------------------------
+        //Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+        let novaDiv = document.createElement('div')
+        novaDiv.className = "center-content"
+        document.querySelector('.main-content').appendChild(novaDiv)
+//-------------------------------------------------------------------------------------------
+        //Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
+    //Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+    //Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+
+    let novop = document.createElement("p")
+    novop.innerHTML = "sou um texto"
+    document.querySelector(".center-content").appendChild(novop)
+
+    let divEsquerda = document.createElement('div')
+    divEsquerda.className = "left-content"
+    divDoBody.appendChild(divEsquerda) 
+
+    let divDireita = document.createElement('div')
+    divDireita.className = "right-content"
+    divDoBody.appendChild(divDireita) 
+
+    //Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5;left-content**
+    //Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;right-content**
+    //Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.divdobody**
+
+        let imagem = document.createElement("img")
+        imagem.className = "small-image"
+        imagem.setAttribute('src','https://picsum.photos/200')
+        divEsquerda.appendChild(imagem)
+
+        let listaNaoOrdenada = document.createElement('ul')
+        divDireita.appendChild(listaNaoOrdenada)
+
+        let itemDalista = ""
+        for (let index = 1; index<=10 ; index += 1) {
+            let novoitem = document.createElement('li')
+            itemDalista = index
+            novoitem.innerText = itemDalista
+            listaNaoOrdenada.appendChild(novoitem)
+        }
+
+        let novaDiv1;
+        for (let index = 0; index < 3; index += 1) {
+            novaDiv1 = document.createElement("h3")
+            divDoBody.appendChild(novaDiv1)
+        }
+
+//      Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+        ImaginaOh1DoCorpo.className = "title"
+        let h3ss = document.getElementsByTagName('h3')
+        for (let i = 0;i<h3ss.length; i+= 1) {
+            h3ss[i].className = 'description'
+        }
+        divDoBody.removeChild(divEsquerda)
+
+        divDireita.style.marginRight = 'auto'
+
+        let parenteDoCentro = document.querySelector('.center-content').parentElement
+        parenteDoCentro.style.backgroundColor = "green"
+        listaNaoOrdenada.removeChild(listaNaoOrdenada.lastChild)
+        listaNaoOrdenada.removeChild(listaNaoOrdenada.lastChild)
+        
+
+    </script>
+  </body>
+</html>
