@@ -17,3 +17,18 @@ const lesson3 = {
   professor: 'Maria Clara',
   turno: 'noite',
 };
+
+const adicionaNoObjetoChaveEValor = (objeto,chave,valor) => objeto[`${chave}`] = valor;
+
+const listaKeysDoObjeto = (objeto) => Object.keys(objeto);
+
+const tamanhoDoObjeto = (objeto) => Object.keys(objeto).length;
+
+const listaValoresDoObjeto = (objeto) => Object.values(objeto);
+
+const allLessons = {lesson1,lesson2,lesson3};
+
+const getValueByNumber = (lissao, number) => Object.values(allLessons.lissao)
+
+
+console.log((allLessons.lesson1).indexOf());
