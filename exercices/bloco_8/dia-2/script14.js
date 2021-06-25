@@ -69,19 +69,11 @@ const expectedResult = false;
 
 function authorUnique() {
   // escreva seu código aqui
-  books.sort((a, b) => a.author.birthYear - b.author.birthYear)
-  let anteriorBook = {
-    anoNascimento: 0,
-    retorno: true
-  }
-  return books.forEach((books) => {
-    
-    if(books.author.birthYear === anteriorBook.anoNascimento) {
-      anteriorBook.retorno = false
-    } else {
-      anteriorBook.anoNascimento = books.author.birthYear
-    }
-  })
+  let somenteAutorUnicos;
+  const autorDuplo = books.forEach((book1) => {
+    somenteAutorUnicos = !books.some((book2) => book2.author.birthYear === book1.author.birthYear);
+  });
+  return somenteAutorUnicos
 }
 
 assert.strictEqual(authorUnique(), expectedResult);
