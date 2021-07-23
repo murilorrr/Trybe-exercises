@@ -1,10 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import pokemons from './Data';
+import React from 'react';
+import Pokedex from './Pokedex'
 
-function App() {
-  return (
-    <h1>Hello, world!</h1>
-  );
+class App extends React.Component {
+  render() {
+    return (<>
+        <Pokedex pokemons={pokemons} />
+    </>)
+  }
 }
 
 export default App;
