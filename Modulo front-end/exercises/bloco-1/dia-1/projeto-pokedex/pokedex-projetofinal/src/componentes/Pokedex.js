@@ -105,6 +105,7 @@ class Pokedex extends React.Component {
 
   }
 }
-//Maite maior do mundo (ajudo com function filter)
-
+// Maite maior do mundo (ajudo com function filter)
+// https://github.com/tryber/exercise-pokedex-state/blob/mariana-mohr-my-pokedex-state/src/App.js
+// Referencia acima da mariana mohr, inicio do state aprendi pelo seu repositório
 export default Pokedex;
