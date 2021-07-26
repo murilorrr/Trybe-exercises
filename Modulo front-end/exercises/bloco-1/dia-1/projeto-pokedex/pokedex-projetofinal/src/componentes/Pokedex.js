@@ -105,5 +105,6 @@ class Pokedex extends React.Component {
 
   }
 }
+//Maite maior do mundo (ajudo com function filter)
 
 export default Pokedex;
