@@ -7,14 +7,16 @@ class Pokemon extends React.Component {
       'alignItems': 'center',
       'justifyContent': 'space-around',
       'flex': '1 1 0',
-      'height': '200px',
-      'width': '200px',
+      'width': '400px',
       'minWidth': '25%',
       'margin': '10px 10px',
       'border': '1px rgb(212, 0, 0) solid',
       'color': 'rgb(255, 144, 9)',
       'boxShadow': '#1f1c1c 2px 6px 2px 2px',
       'overflow': 'hidden',
+      'fontFamily': 'pokemon',
+      'letterSpacing': '0.1em',
+      'flexDirection': 'row'
     }
 
     const styleText = {
@@ -26,7 +28,7 @@ class Pokemon extends React.Component {
 
     const { name, id, type, image } = this.props.pokemon
     return (
-    <div className={`pokemon ${type.toLowerCase()} card`} style={style}>
+    <div className={`pokemon ${type.toLowerCase()} card `} style={style}>
       <div>
         <img className="card-image" src={image} alt={name} />
       </div>

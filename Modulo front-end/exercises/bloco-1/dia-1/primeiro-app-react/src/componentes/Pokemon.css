@@ -3,6 +3,13 @@
 	margin: 0 auto;
 }
 
+.pokedex {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 h1 {
 	text-align: center;
 	font-size: 54px;
@@ -15,12 +22,13 @@ h1 {
 	text-align: center;
 	border-radius: 20px;
 	position: relative;
+	height: 220px;
 }
 
 .card::after {
 	content: "";
   display: block;
-  width: 50%;
+  width: 45%;
   height: 45%;
   border-radius: 100%;
   background-color: #fff;
@@ -101,6 +109,7 @@ h1 {
 	font-weight: normal;
 	position: relative;
 	z-index: 2;
+	margin: 30px 1em 15px 1em;
 }
 
 .card-subtitle {
@@ -109,12 +118,14 @@ h1 {
 	font-weight: lighter;
 	position: relative;
 	z-index: 2;
+	margin-bottom: 10%;
 }
 
 .card-image {
 	height: 180px;
 	position: relative;
 	z-index: 2;
+	padding: 0 0 0 2em;
 }
 
 @keyframes bounce {
