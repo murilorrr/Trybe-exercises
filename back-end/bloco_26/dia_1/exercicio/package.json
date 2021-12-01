@@ -1,0 +1,17 @@
+{
+  "name": "exercicio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "nodeimc": "node imc.js"
+  },
+  "author": "Murilo Ribeiro",
+  "license": "ISC",
+  "dependencies": {
+    "dog-names": "^2.0.0",
+    "readline-sync": "^1.4.10"
+  }
+}
