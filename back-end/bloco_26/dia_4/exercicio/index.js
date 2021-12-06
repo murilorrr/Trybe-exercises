@@ -58,7 +58,46 @@ app.post("/greetings", (req, res)=> {
 });
 
 app.get("/simpsons", (req, res) => {
-  const simpsons = fs.readFileSync("./simpsons.json", "utf-8");
-  console.log(simpsons);
+  let simpsons;
+  try {
+    simpsons = fs.readFileSync("./simpsons.json", "utf-8");
+  } catch (err) {
+    return res.status(500).send({message: "Internal Server Error"});
+  }
   res.status(200).json(JSON.parse(simpsons));
+});
+
+app.get("/simpsons/:id", (req, res) => {
+  const { id } = req.params;
+  let simpsons;
+  try {
+    simpsons = fs.readFileSync("./simpsons.json", "utf-8");
+  } catch (err) {
+  return res.status(500).send({message: "Internal Server Error"});
+  }
+  const simpsonsArray = JSON.parse(simpsons);
+  const simpsonsFiltered = simpsonsArray.filter((simpson) => simpson.id == id);
+
+  if(simpsonsFiltered.length === 0) return res.status(404).send({message: "simpson not found"});
+
+  res.status(200).json(simpsonsFiltered);
+});
+
+app.post("/simpsons", (req, res) => {
+  const {id, name} = req.body;
+  let simpsons;
+  try {
+    simpsons = JSON.parse(fs.readFileSync("./simpsons.json", "utf-8"));
+  } catch (err) {
+    return res.status(500).send({message: "Internal Server Error"});
+  }
+  if (simpsons[id] !== undefined) return res.status(409).send({message: "id already exists"});
+  try {
+    simpsons.push({id: id, name: name});
+    fs.writeFileSync("./simpsons.json", JSON.stringify(simpsons));
+  } catch (error) {
+    return res.status(400).send({message: "error na escrita"});
+  }
+  res.status(204).end();
+
 });
