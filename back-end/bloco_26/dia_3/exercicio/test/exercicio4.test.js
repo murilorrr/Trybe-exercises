@@ -10,35 +10,46 @@ const sinon = require('sinon');
 const { expect } = require('chai');
 const writeContentInFile = require('../exercicio4');
 
-describe('Teste para escrita do arquivo passando nome do arquivo e conteudo', ()=> {
+describe('A resposta', ()=> {
 
-  describe('retorna', ()=> {
+  describe('é certa', ()=> {
+    it('ok', async() => {
 
-    before(() => {
-      sinon.stub(fs, 'writeFileSync');
-    });
-  
-    after(() => {
-      fs.writeFileSync.restore();
-    });
-    
-    it('ok se deu bom', async ()=>{
+      let writeFile;
 
-      
-      const response = await writeContentInFile('sim.txt', 'exato');
+      before(() => {
+        writeFile = sinon.stub(fs, 'writeFile').returns('ok');
+      });
+
+      after(() => {
+        writeFile.restore();
+      });
+
+      const response = await writeContentInFile('arquivo.txt', '#vqv conteúdo');
 
       expect(response).to.be.equal('ok');
-
-    });
-
-    it('erro se deu ruim', async ()=>{
-
-      const response = await writeContentInFile('sim.txt', 'exato');
-
-      expect(response).to.be.equal('error');
-
+      
     });
 
   });
 
+  describe('é errada', ()=>{
+    it('error', async() => {
+
+      let writeFile;
+
+      before(() => {
+        writeContentInFile= sinon.stub(fs, 'writeFile').rejects('error');
+      });
+
+      after(() => {
+        writeFile.restore();
+      })
+
+      const response = await writeContentInFile('arquivo.txt', '#vqv conteúdo');
+
+      expect(response).to.be.equal('error');
+
+    });
+  });
 });
