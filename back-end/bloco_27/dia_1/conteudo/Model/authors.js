@@ -3,11 +3,9 @@ const connection = require('./connection');
 const getAll = async () => {
   const [authors] = await connection.execute(
     'SELECT id, first_name, middle_name, last_name FROM model_example.authors;');
-  return authors;
+  return authors ? authors : null;
 };
 
 module.exports = {
   getAll,
-}
-
-getAll().then((el) => console.log(el));
+};
