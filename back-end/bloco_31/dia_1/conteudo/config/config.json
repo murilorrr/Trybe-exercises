@@ -4,6 +4,7 @@
     "password": "futebol10",
     "database": "associations",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "logging": false
   }
 }
