@@ -1,0 +1,3 @@
+[submodule "back-end/bloco_28/dia_1/conteudo/nodejs-jwt-base-project"]
+	path = back-end/bloco_28/dia_1/conteudo/nodejs-jwt-base-project
+	url = git@github.com:murilorsv14/Project-jwt-base.git
