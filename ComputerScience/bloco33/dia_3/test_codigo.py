@@ -1,3 +1,4 @@
+import pytest
 import codigo
 
 
@@ -19,3 +20,8 @@ def test_is_even_when_number_is_odd_returns_false():
 def test_is_even_when_number_is_even_returns_true():
     "Para um número par a função deve retornar o valor False"
     assert codigo.is_even(2) is True
+
+
+def test_divide_when_other_number_is_zero_raises_an_exception():
+    with pytest.raises(ZeroDivisionError, match="division by zero"):
+        codigo.divide(2, 0)
