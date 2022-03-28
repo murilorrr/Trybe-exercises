@@ -10,13 +10,10 @@ class Item:
         self.nome = nome
         self.preco = preco
 
-    def getPrice(self):
-        return self.preco
-
 
 class Pedido:
     def __init__(self, itens):
-        self.itensDoPedido: list = []
+        self.itensDoPedido: list[Item] = []
         self.itensDoPedido = itens
         self.tamanho = len(self.itensDoPedido)
         today = date.today()
@@ -35,7 +32,10 @@ class Pedido:
         return self.data
 
     def getPedido(self):
-        return self.itensDoPedido
+        array = []
+        for item in self.itensDoPedido:
+            array.append((item.nome, item.preco))
+        return array
 
     def totalPedido(self):
         total = 0
@@ -44,11 +44,19 @@ class Pedido:
         return total
 
 
-maca = Item('maça', 2)
-guarana = Item('Guarana', 5.9)
-fritas = Item('Fritas crocantes', 10.9)
+maca = Item("maça", 2)
+guarana = Item("Guarana", 5.9)
+fritas = Item("Fritas crocantes", 10.9)
 
-pedido = Pedido([maca, guarana, fritas])
-print(pedido.getData())
-# print(pedido.getPedido())
-print(pedido.totalPedido())
+
+def main():
+    pedido = Pedido([maca, guarana, fritas])
+    print(pedido.getData())
+    print(pedido.getPedido())
+    print(pedido.totalPedido())
+
+    return None
+
+
+if __name__ == "__main__":
+    main()
